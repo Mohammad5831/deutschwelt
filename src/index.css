@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;1,14..32,400&family=DM+Serif+Display:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap');
+@import 'tailwindcss';
+
+@theme inline {
+  --color-background: #08080B;
+  --color-surface: #111116;
+  --color-surface-elevated: #18181F;
+  --color-surface-interactive: #1E1E27;
+  --color-border: rgba(255, 255, 255, 0.07);
+  --color-border-strong: rgba(255, 255, 255, 0.12);
+  --color-gold: #E8B84B;
+  --color-gold-dim: rgba(232, 184, 75, 0.15);
+  --color-gold-glow: rgba(232, 184, 75, 0.08);
+  --color-text: #F0EDE8;
+  --color-text-muted: rgba(240, 237, 232, 0.5);
+  --color-text-subtle: rgba(240, 237, 232, 0.3);
+  --color-success: #4ECBA4;
+  --color-error: #E8564B;
+  --color-info: #5B9EE8;
+
+  --font-sans: 'Inter', sans-serif;
+  --font-serif: 'DM Serif Display', serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+  --radius-full: 9999px;
+
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.4);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.5);
+  --shadow-lg: 0 8px 32px rgba(0,0,0,0.6);
+  --shadow-gold: 0 0 24px rgba(232, 184, 75, 0.2);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: var(--font-sans);
+  background-color: var(--color-background);
+  color: var(--color-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.1);
+  border-radius: 99px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255,255,255,0.18);
+}
+
+::selection {
+  background: rgba(232, 184, 75, 0.25);
+  color: var(--color-text);
+}
+
+.font-serif { font-family: var(--font-serif); }
+.font-mono { font-family: var(--font-mono); }
+
+.glass {
+  background: rgba(24, 24, 31, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--color-border);
+}
+
+.gold-gradient {
+  background: linear-gradient(135deg, #E8B84B 0%, #F5D080 50%, #C99A2E 100%);
+}
+
+.gold-text {
+  background: linear-gradient(135deg, #E8B84B 0%, #F5D080 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* CEFR Level badges */
+.level-a1 { background: rgba(94, 180, 150, 0.15); color: #5EB496; border: 1px solid rgba(94, 180, 150, 0.25); }
+.level-a2 { background: rgba(94, 150, 230, 0.15); color: #5E96E6; border: 1px solid rgba(94, 150, 230, 0.25); }
+.level-b1 { background: rgba(150, 100, 230, 0.15); color: #9664E6; border: 1px solid rgba(150, 100, 230, 0.25); }
+.level-b2 { background: rgba(230, 130, 60, 0.15); color: #E6823C; border: 1px solid rgba(230, 130, 60, 0.25); }
+.level-c1 { background: rgba(232, 184, 75, 0.15); color: #E8B84B; border: 1px solid rgba(232, 184, 75, 0.25); }
+.level-c2 { background: rgba(232, 75, 75, 0.15); color: #E84B4B; border: 1px solid rgba(232, 75, 75, 0.25); }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.35s ease forwards;
+}
+
+.skeleton {
+  background: linear-gradient(90deg, rgba(255,255,255,0.04) 25%, rgba(255,255,255,0.08) 50%, rgba(255,255,255,0.04) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: var(--radius-md);
+}
+
+/* Scrollbar hidden by default */
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Progress ring */
+.progress-ring {
+  transform: rotate(-90deg);
+  transform-origin: center;
+}
