@@ -12,9 +12,9 @@ Unlike a traditional LMS, DeutschWelt is designed as a **complete digital enviro
 
 ## 🚧 Project Status
 
-**Current status: Frontend / UI Prototype**
+**Current status: Frontend **
 
-The current repository contains the frontend implementation and product interface.
+The current repository contains the frontend implementation.
 
 The backend architecture and API layer are currently being developed and will be integrated progressively.
 
@@ -36,7 +36,7 @@ The backend architecture and API layer are currently being developed and will be
 * [x] Dictionary & translation interface
 * [x] Telegram integration interface
 * [ ] Backend API
-* [ ] Database architecture
+* [x] Database architecture
 * [ ] Authentication & authorization
 * [ ] User management
 * [ ] Learning progress API
